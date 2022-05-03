@@ -28,14 +28,13 @@ jobs:
       with:
         node-version: 12
     
-    # Install Yarn
     - uses: borales/actions-yarn@v2.0.0
       with:
-        cmd: install # will run `yarn install` command
+        cmd: install
         
     # Build React App with Yarn
     - name: Build React App
-      run: yarn build
+      run: sudo yarn build
     
     # Install Surge
     - name: Install Surge
@@ -43,4 +42,4 @@ jobs:
     
     # Deploy Surge
     - name: Deploy React App to Surge
-      run: surge ./build project002-adil.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build session_one_mohsin.surge.sh --token ${{ secrets.SURGE_TOKEN }}
